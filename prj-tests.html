@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+    
+    <title>health.tests</title>
+</head>
+<body>
+    <div id="navbar" class="sticky">
+        <a href="index.html">HOME</a>
+        <a href="prj-tests.html">TEST</a>
+        <a href="prj-tips-charts.html">TIPS</a>
+        <a href="prj-about.html">ABOUT US</a>
+        <p id="he" class="head-font"></p>
+    </div>
+
+    <div class="tests-title title-font">tests.</div>
+    <div style="display: flex; justify-content: center"><div class="bar"></div></div>
+    <div class="head-font" id="big-he"></div>
+
+    <div class="info"  style="font-size: 14px; letter-spacing: 0.05em">
+        <p class="title-font">What will we use this information for?</p>
+        <div class="main-font">We will calculate your BMI, Wasit-Height ratio and your approximate Fat Percentage.</br></br>
+        There for we recommend you using scales and tapes for exact result.</div>
+    </div>   
+
+    <form class="phy" id="info-form">
+        <div class="tests-box">
+            <p class="title-font labels">age: </p>
+            <input class="phy-input" id="age" type="text" maxlength="3" required>
+            <p class="title-font labels">sex: </p>
+            <label class="ra-btn" for="male">
+                <input id="male" type="radio" name="male-female" value="1">
+                <span class="checkmark"></span><div>Male</div>
+            </label>
+            <label class="ra-btn" for="female">
+                <input id="female" type="radio" name="male-female" value="0">
+                <span class="checkmark"></span><div>Female</div>
+            </label>
+        </div>
+        <div class="tests-box">
+            <p class="title-font labels">current weight:</p>
+            <input class="phy-input" id="wei" placeholder="in kg" type="text" maxlength="5" required>
+            <p class="title-font labels">height: </p>
+            <input class="phy-input" id="hei" placeholder="in m" type="text" maxlength="5" required>
+        </div> 
+        <div>
+            <p class="title-font labels">waistline:</p>
+            <input class="phy-input" id="wai" placeholder="in cm" type="text" maxlength="5" required>
+            <br>
+            <button class="buttonSubmit title-font" type="button" onclick="resulting()">get my result</button>
+            <div id="phy-error-message" class="error-message"></div>
+        </div>
+    </form>
+    <div id="conclu-phy" class="head-font lead-text margin-lead-2" style="color:rgba(32, 90, 32, 0.726)">YOUR PHYSICAL HEALTH'S RESULT GOES HERE:</div>
+    <div class="phy-result-title title-font grid-con-1">
+        <div class="item1">BMI</div>
+        <div class="item2"><div class="scale"><div class="head-font scale-num">50</div><div id="bmibar"></div></div></div>
+        <div class="bmi-p" id="bmiConclu"></div>
+        <div class="item3">Wa-He</div>
+        <div class="item4"><div class="scale"><div class="head-font scale-num">1</div><div id="whbar"></div></div></div>
+        <div class="wh-p" id="rConclu"></div>
+        <div class="item5">FatP</div>
+        <div class="item6"><div class="scale"><div class="head-font scale-num">100%</div><div id="fatbar"></div></div></div>
+        <div class="fat-p" id="fatConclu"></div>
+    </div>
+    <div style="text-align: center">
+        <button onclick="analysis()" id="button-advice-phy" class="buttonSubmit title-font" type="button">get advice!</button>
+    <div id="advice-phy">
+            <!-- <div id="women-scale">
+                <img src="women.png" style="position: relative; z-index: -1"><span id="selector"></span>
+            </div>
+            <div id="men-scale">
+                <img src="men.png" width="676" height="189">
+            </div> -->
+        <div class="advice-phy">
+            <div></div>
+            <div class="title-font" style="font-size: 21px">BMI point</div>
+            <div class="title-font" style="font-size: 21px">Waist-Height ratio</div>
+            <div class="title-font" style="font-size: 21px">Fat Percentage</div>
+            <div></div>
+            <div></div>
+            <div style="padding:20px">
+                <div id="bmi-an" class="head-font"></div><br/>
+                <div id="bmi-ad" class="main-font"></div>
+                <div class="main-font">
+                    <span id="gain-w"></span>
+                    <span id="main-w"></span>
+                    <span id="lose-w"></span>
+                </div>
+            </div>
+            <div style="padding:20px">
+                <div id="r-an" class="head-font"></div><br/>
+                <div id="r-ad" class="main-font"></div>
+            </div>
+            <div style="padding:22px">
+                <div id="fat-an" class="head-font"></div><br/>
+                <div id="fat-ad" class="main-font"></div>
+            </div>
+            <div></div>
+            <div></div>
+        </div>
+        <p class="main-font" style="margin-top:50px; font-size: 12px; color: rgb(82, 80, 80)">*These statistics and advice are not completely accurate. <br> You should contact with the doctor to get a professional body check-up</p>
+    </div>
+ 
+    <div id="test-men" class="head-font lead-text margin-lead-2" style="color:rgba(32, 90, 32, 0.726); margin-bottom: 10px; margin-top: 50px">TEST YOUR LIFESTYLE</div>
+    <div style="text-align: center; font-size: 14px; letter-spacing: 0.05em">
+        <p class="main-font">In order to get the best result and advice, you should mark the choice which is true to you the most.
+            <br>(Source: <a href="https://www.psychologytoday.com/us/tests/health/healthy-lifestyle-test">psychologytoday.com</a>)
+        </p>
+        
+    </div></br></br>
+    <div class="grid-con-2">
+        <div></div>
+        <div class="mid title-font" style="font-size: 14px; color:rgb(98, 97, 97)">Rarely or never</div>
+        <div class="mid title-font" style="font-size: 14px; color:rgb(98, 97, 97)">Sometimes</div>
+        <div class="mid title-font" style="font-size: 14px; color:rgb(98, 97, 97)">Usually</div>
+        <div class="mid title-font" style="font-size: 14px; color:rgb(98, 97, 97)">Most of the time</div>
+        <div></div>
+
+        <div class="grid-text">1. I smoke less than ONE pack a week</div>
+        <label class="ra-btn mid"><div><input type="radio" name="q1" value="0" required><div class="checkmark"></div></div></label>
+        <label class="ra-btn mid"><div><input type="radio" name="q1" value="1"><div class="checkmark"></div></div></label>
+        <label class="ra-btn mid"><div><input type="radio" name="q1" value="2"><div class="checkmark"></div></div></label>
+        <label class="ra-btn mid"><div><input type="radio" name="q1" value="3"><div class="checkmark"></div></div></label>
+        <div></div>
+
+        <div class="grid-text">2. I exercise at least once a week.</div>
+        <label class="ra-btn mid"><div><input type="radio" name="q2" value="0" required><div class="checkmark"></div></div></label>
+        <label class="ra-btn mid"><div><input type="radio" name="q2" value="1" ><div class="checkmark"></div></div></label>
+        <label class="ra-btn mid"><div><input type="radio" name="q2" value="2" ><div class="checkmark"></div></div></label>
+        <label class="ra-btn mid"><div><input type="radio" name="q2" value="3" ><div class="checkmark"></div></div></label>
+        <div></div>
+
+        <div class="grid-text">3. I avoid excess sugar.</div>
+        <label class="ra-btn mid"><div><input type="radio" name="q3" value="0" required><div class="checkmark"></div></div></label>
+        <label class="ra-btn mid"><div><input type="radio" name="q3" value="1" required><div class="checkmark"></div></div></label>
+        <label class="ra-btn mid"><div><input type="radio" name="q3" value="2" required><div class="checkmark"></div></div></label>
+        <label class="ra-btn mid"><div><input type="radio" name="q3" value="3" required><div class="checkmark"></div></div></label>
+        <div></div>
+
+        <div class="grid-text">4. I drink LESS than three cups of coffee or tea a day.</div>
+        <label class="ra-btn mid"><div><input type="radio" name="q4" value="0" required><div class="checkmark"></div></div></label>
+        <label class="ra-btn mid"><div><input type="radio" name="q4" value="1" required><div class="checkmark"></div></div></label>
+        <label class="ra-btn mid"><div><input type="radio" name="q4" value="2" required><div class="checkmark"></div></div></label>
+        <label class="ra-btn mid" ><div><input type="radio" name="q4" value="3" required><div class="checkmark"></div></div></label>
+        <div></div>
+
+        <div class="grid-text">5. I drink LESS than 5 oz (three drinks) of alcohol per week.</div>
+        <label class="ra-btn mid"><div><input type="radio" name="q5" value="0" required><div class="checkmark"></div></div></label>
+        <label class="ra-btn mid"><div><input type="radio" name="q5" value="1" required><div class="checkmark"></div></div></label>
+        <label class="ra-btn mid"><div><input type="radio" name="q5" value="2" required><div class="checkmark"></div></div></label>
+        <label class="ra-btn mid"><div><input type="radio" name="q5" value="3" required><div class="checkmark"></div></div></label>
+        <div></div>
+
+        <div class="grid-text">6. Once I get to bed, I fall asleep easily.</div>
+        <label class="ra-btn mid"><div><input type="radio" name="q6" value="0" required><div class="checkmark"></div></div></label>
+        <label class="ra-btn mid"><div><input type="radio" name="q6" value="1" required><div class="checkmark"></div></div></label>
+        <label class="ra-btn mid"><div><input type="radio" name="q6" value="2" required><div class="checkmark"></div></div></label>
+        <label class="ra-btn mid"><div><input type="radio" name="q6" value="3" required><div class="checkmark"></div></div></label>
+        <div></div>
+
+        <div class="grid-text">7. I drink more than 1.5 liters of water a day.</div>
+        <label class="ra-btn mid"><div><input type="radio" name="q7" value="0" required><div class="checkmark"></div></div></label>
+        <label class="ra-btn mid"><div><input type="radio" name="q7" value="1" required><div class="checkmark"></div></div></label>
+        <label class="ra-btn mid"><div><input type="radio" name="q7" value="2" required><div class="checkmark"></div></div></label>
+        <label class="ra-btn mid"><div><input type="radio" name="q7" value="3" required><div class="checkmark"></div></div></label>
+        <div></div>
+
+        <div class="grid-text">8. To ease my aches and pains, I prefer natural remedies to medication.</div>
+        <label class="ra-btn mid"><div><input type="radio" name="q8" value="0" required><div class="checkmark"></div></div></label>
+        <label class="ra-btn mid"><div><input type="radio" name="q8" value="1" required><div class="checkmark"></div></div></label>
+        <label class="ra-btn mid"><div><input type="radio" name="q8" value="2" required><div class="checkmark"></div></div></label>
+        <label class="ra-btn mid"><div><input type="radio" name="q8" value="3" required><div class="checkmark"></div></div></label>
+        <div></div>
+
+        <div class="grid-text">9. I make sure I get enough fiber and vitamins.</div>
+        <label class="ra-btn mid"><div><input type="radio" name="q9" value="0" required><div class="checkmark"></div></div></label>
+        <label class="ra-btn mid"><div><input type="radio" name="q9" value="1" required><div class="checkmark"></div></div></label>
+        <label class="ra-btn mid"><div><input type="radio" name="q9" value="2" required><div class="checkmark"></div></div></label>
+        <label class="ra-btn mid"><div><input type="radio" name="q9" value="3" required><div class="checkmark"></div></div></label>
+        <div></div>
+
+        <div class="grid-text">10. I have a check-up exam at least once two years.</div>
+        <label class="ra-btn mid"><div><input type="radio" name="q10" value="0" required><div class="checkmark"></div></div></label>
+        <label class="ra-btn mid"><div><input type="radio" name="q10" value="1" required><div class="checkmark"></div></div></label>
+        <label class="ra-btn mid"><div><input type="radio" name="q10" value="2" required><div class="checkmark"></div></div></label>
+        <label class="ra-btn mid"><div><input type="radio" name="q10" value="3" required><div class="checkmark"></div></div></label>
+        <div></div>
+        
+    </div>
+    <div style="text-align:center">
+        <button id="conclu-men-2" class="buttonSubmit title-font" type="button" onclick="check()" style="padding-right: 60px; padding-left: 60px">Submit</button>
+        <div id="men-error-message" class="error-message"></div>
+    </div>
+    
+    <div id="conclu-men" class="head-font lead-text margin-lead-2" style="color:rgba(32, 90, 32, 0.726); margin-bottom: 60px">YOUR LIFESTYLE RESULT GOES HERE:</div>
+    <div style="text-align: center; margin-bottom: 120px">
+        <p class="head-font">your point is</p>
+        <div class="title-font" id="result" style="color:rgb(76, 82, 77)"></div>
+        <div class="head-font"><p id="men-conclu"></p><br><p id="click-text" style="margin-top: -20px">Click <a href="prj-tips-life.html">here</a> to get our tips for better lifestyle</p></div>
+    </div>
+    
+    
+<div class="footer">
+        <div class="logo-footer">
+            <p id="logo" class="logo-font" style="font-size: 40px">yourhealth</p>
+            <p class="head-font white-txt">"We care about YOUR HEALTH"
+            </p>
+        </div>
+        <div class="white-txt" style="font-size: 12px; margin: 50px; text-align: left">
+            <p class="title-font">Shortcut</p>
+            <a class="head-font" href="prj-tests.html">Check physical health</a></br>
+            <a class="head-font" href="prj-tests.html#test-men">Check lifestyle</a>
+        </div>
+        <div class="white-txt title-font" style="font-size: 12px; margin: 50px">
+            <p>Connect us</p>
+            <div>
+            <p class="head-font" style="font-weight: 300">Creator: Ta Ha Phuong</p>
+            <a href="https://www.instagram.com/tahaphuongz/?hl=de"><img src="tw.png" width="25px" height="25px"></a>
+            <a href="https://www.instagram.com/tahaphuongz/?hl=de"><img src="fb.png" width="25px" height="25px"></a>
+            <a href="https://www.instagram.com/tahaphuongz/?hl=de"><img src="tw.png" width="25px" height="25px"></a>      
+            </div>
+        </div>
+        <div class="white-txt title-font" style="font-size: 12px; margin: 50px">
+            <p>Thanks to</p>
+            <p class="head-font" style="font-weight: 300">Ngo Huu Quan</p>
+            <p class="head-font" style="font-weight: 300">Nguyen Ba Tung Lam</p>
+        </div>
+    </div>
+</body>
+<script src="prj.js"></script>
+</html>

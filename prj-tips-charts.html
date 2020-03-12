@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+    <title>health.tips.charts</title>
+</head>
+<body>
+    <div id="navbar" class="sticky">
+        <a href="index.html">HOME</a>
+        <a href="prj-tests.html">TEST</a>
+        <a href="prj-tips-charts.html">TIPS</a>
+        <a href="prj-about.html">ABOUT US</a>
+        <p id="he" class="head-font"></p>
+    </div>
+
+    <div class="tests-title title-font">tips.</div>
+    <div style="display: flex; justify-content: center"><div class="bar"></div></div>
+</br></br>
+        <div class="tips-nav head-font">
+            <div></div>
+            <div class="nav-e" style="color: rgb(83, 129, 83); font-weight: 600"><a href="prj-tips-charts.html">CHARTS</a></div>
+            <div class="nav-e"><a href="prj-tips-diets.html">DIETS</a></div>
+            <div class="nav-e"><a href="prj-tips-weight.html">GAIN/LOSE WEIGHT</a></div>
+            <div class="nav-e"><a href="prj-tips-exer.html">EXERCISES</a></div>
+            <div class="nav-e"><a href="prj-tips-life.html">BETTER LIFESTYLE</a></div>
+            <div></div>
+        </div>
+    <div class="diets-title head-font">
+        Welcoming!
+    </div>
+    <div class="diets-intro main-font">
+        Thanks for visiting our site! Here you can find some helpful tips for a better health and lifestyle. Click the title above to get the information you need.
+        Here below are the charts that related to your statistics in 'TESTS'. 
+    </div>
+       
+        <div style="text-align: center" id="wh-pic">
+        <p class="diets-heading head-font">Waist-Height Ratio</p>
+        <img src="https://mport.com/blog/wp-content/uploads/2017/02/Waist-to-Height_infographic.png" width="500px">
+        </div>
+    
+        <div style="text-align: center" id="fat-pic"> 
+        <p class="diets-heading head-font">Fat Percentage</p>
+        <img src="fat.jpg" width="800px">
+        </div>
+    </br></br></br></br>
+    
+<div class="footer">
+        <div class="logo-footer">
+            <p id="logo" class="logo-font" style="font-size: 40px">yourhealth</p>
+            <p class="head-font white-txt">"We care about YOUR HEALTH"
+            </p>
+        </div>
+        <div class="white-txt" style="font-size: 12px; margin: 50px; text-align: left">
+            <p class="title-font">Shortcut</p>
+            <a class="head-font" href="prj-tests.html">Check physical health</a></br>
+            <a class="head-font" href="prj-tests.html#test-men">Check lifestyle</a>
+        </div>
+        <div class="white-txt title-font" style="font-size: 12px; margin: 50px">
+            <p>Connect us</p>
+            <div>
+            <p class="head-font" style="font-weight: 300">Creator: Ta Ha Phuong</p>
+            <a href="https://www.instagram.com/tahaphuongz/?hl=de"><img src="tw.png" width="25px" height="25px"></a>
+            <a href="https://www.instagram.com/tahaphuongz/?hl=de"><img src="fb.png" width="25px" height="25px"></a>
+            <a href="https://www.instagram.com/tahaphuongz/?hl=de"><img src="tw.png" width="25px" height="25px"></a>      
+            </div>
+        </div>
+        <div class="white-txt title-font" style="font-size: 12px; margin: 50px">
+            <p>Thanks to</p>
+            <p class="head-font" style="font-weight: 300">Ngo Huu Quan</p>
+            <p class="head-font" style="font-weight: 300">Nguyen Ba Tung Lam</p>
+        </div>
+    </div>
+</body>
+<script>
+function passguestname() {
+        var guestname = document.getElementById("guestname").value;
+        localStorage.setItem("guestname-value", guestname);
+        return true
+    }
+
+    const guestname = localStorage.getItem("guestname-value");
+    if (guestname != null) {
+        document.getElementById("he").innerHTML = "Hello" + " " + guestname + "!";
+        document.getElementById("big-he").innerHTML = "let's get started, " + guestname;
+        document.getElementById("big-by").innerHTML = "Thank you, " + guestname;
+    }
+    if (guestname == null || guestname == "") {
+        document.getElementById("he").innerHTML = "Hello new guest!";
+        document.getElementById("big-he").innerHTML = "let's get started, new guest";
+        document.getElementById("big-by").innerHTML = "Thank you, new guest";
+    }
+
+</script>
+</html>

@@ -1,0 +1,655 @@
+html, body {
+    margin: 0;
+}  
+
+#navbar {
+    overflow: hidden;
+    background-color: rgb(52, 102, 52);
+    z-index: 1;
+    height: 48px;
+}
+        
+a:active, button:active {
+    opacity: 0.8;
+    outline: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+#navbar a {
+    float: left;
+    display: block;
+    text-align: center;
+    padding: 20px 16px 16px 20px;
+
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    letter-spacing: 0.5em;
+    font-size: 10px;
+    font-family: Montserrat, sans-serif;
+    font-weight: 600;
+    }
+
+#navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+#he {
+    position: relative;
+    float: right;
+    font-size: 15px;
+    color: #fffffffd;
+    text-align: center;
+    margin-right: 30px;
+    font-weight: 600;
+}
+#logo {
+    font-size: 20px;
+    color: #fffffffd;
+    margin: 10px 2% 10px 0;
+}
+#big-he, #big-by {
+    text-align: center;
+    font-size: 25px;
+    letter-spacing: 0.06em;
+    margin-top: 20px;
+    margin-bottom: 65px;
+
+}
+#result {
+    font-size: 100px;
+    margin-top: -40px;
+    padding-top: 0;
+}
+#age, #wei, #hei, #wai {
+    font-family: 'Segoe UI Light', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 25px;
+    width: 150px;
+    margin-bottom: 40px;
+}
+#click-text {
+    display: none;
+}
+#advice-phy {
+    display: none;
+}
+#test-men {
+    padding-top: 55px;
+}
+#bmi-an, #r-an, #fat-an {
+    color: green;
+    font-size: 30px;
+    font-weight: 600;
+}
+#bmi-ad, #r-ad, #fat-ad {
+    font-size: 16px;
+}
+#selector {
+    position: absolute;
+    z-index: 1;
+    background-color: transparent;
+    border: 2px solid green;
+    height: 189px;
+    width: 67px;
+}
+#bmibar, #whbar, #fatbar {
+    height: 16px;
+    width: 0px;
+    background-color: green;
+
+    position: relative;
+    z-index: 1;
+}
+.scale {
+    height: 16px;
+    width: 600px;
+    margin-left: 40px;
+    background-color: rgba(197, 197, 197, 0.219);
+    
+    position: relative;
+    z-index: -1;
+}
+    .logo-font {
+        font-family: 'Playfair Display', serif;
+    }
+    .head-font {
+        font-family: Montserrat, sans-serif;
+    }
+    .main-font {
+        font-family: 'Segoe UI Light', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .title-font {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+    }
+    .white-txt {
+        color: rgb(255, 255, 255);
+    }
+    .title-text {
+        text-align: center;
+        margin-bottom: 0px;
+        font-size: 90px;
+        padding: 10px 50px 10px 50px;
+    }
+    .lead-text {
+        font-size: 18px;
+        text-align: center;
+        letter-spacing: 0.5em;
+        font-weight: 600;
+    }
+    .intro-text {
+        display: block;
+        text-align: center;
+        font-size: 20px;
+        background-color: transparent;
+        color: white;
+        font-weight: 400;
+        margin: 0px 145px 0px 145px;
+    }
+    .logo-nav {
+        position: relative;
+        float: right;
+    }
+    .logo-footer {
+        text-align: left;
+        margin: 0 0 0 10vw;
+        padding-top: 3vw;
+    }
+    .title-box{
+        background-image: url("https://www.lifelinescreening.com/-/media/project/life-line-screening/life-line-screening/6-health-education/articles/diet-and-nutrition/fruits-and-vegetables.jpg?h=1432&la=en&w=2000&hash=6F18108BB5E8283BFD9577DA563347457A3B114A");
+        filter: grayscale(0.3);
+        filter: brightness(0.95);
+        height: 100vh;
+        width: 100%;
+        position: static;
+
+        padding-top: 100px;
+        display: block;
+        z-index: -2;
+    } 
+    .round {
+        background-size: 170px;
+        height: 170px;
+        width: 170px;
+        border-radius: 50%;
+        position: relative;
+        z-index: -1;
+    }
+    .wrapper {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 0px;
+    }
+    .bubble-text {
+        color: rgb(29, 77, 29);
+        text-align: center;
+        font-size: 20px;
+        margin-top: 7px;
+        margin-bottom: 80px;
+    }
+    .description {
+        font-size: 30px;
+        margin-left: 200px;
+    }
+    .margin-lead {
+        margin-bottom: 70px;
+        margin-top: 150px;
+    }
+    .margin-lead-2 {
+        margin-bottom: 70px;
+        margin-top: 100px;
+    }
+    .margin-des {
+        margin-bottom: 120px;
+    }
+    .pdd-15 {
+        padding: 15px;
+    }
+    .sticky {
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
+    .middle {
+        text-align: center;
+    }
+    .title-bar {
+        height: 5px;
+        width: 40px;
+        background-color: forestgreen;
+    }
+
+    .buttonStart {
+        cursor: pointer;
+        background-color: transparent;
+        border: 2px solid white;
+        border-radius: 24px;
+        padding: 14px 24px 14px 24px;
+        margin-top: 50px;
+
+        font-weight: 600;
+        font-size: 12px;
+        letter-spacing: 0.3em;
+        color: white;
+    }
+    .buttonStart:hover {
+        background-color: rgba(255, 255, 255, 0.397);
+    }
+    .buttonStart:active {
+        background-color: rgba(255, 255, 255, 0.555);
+    }
+    .buttonStart:focus {
+        outline: none;
+    }
+
+    .arrow{
+        position: absolute;
+        top: 70%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+    .arrow span{
+        display: block;
+        width: 25px;
+        height: 25px;
+        border-bottom: 2px solid rgb(255, 255, 255, 0.7);
+        border-right: 2px solid rgb(255, 255, 255, 0.7);
+        transform: rotate(45deg);
+        margin: -10px;
+        animation: animate 2s infinite;
+    }
+    .arrow span:nth-child(2){
+        animation-delay: -0.2s;
+    }
+    .arrow span:nth-child(3){
+        animation-delay: -0.4s;
+    }
+    @keyframes animate {
+        0%{
+            opacity: 0;
+            transform: rotate(45deg) translate(-20px,-20px);
+        }
+        50%{
+            opacity: 1;
+        }
+        100%{
+            opacity: 0;
+            transform: rotate(45deg) translate(20px,20px);
+        }
+    }
+
+    /*Footer*/
+    .footer {
+        display: grid;
+        grid-template-columns: 40% 20% 20% 20%;
+        background-color: rgb(116, 143, 116);
+        height: 250px;
+        padding-top: 10px;
+    }
+    .footer a {
+        color: white;
+        text-decoration: none;
+    }
+    .footer a:hover {
+        text-decoration: underline;
+    }
+    }
+    .footer a:visited {
+        color: white;
+    }
+    /*Modal box*/
+    .modal-container {
+        position: fixed;
+        display: inline-block;
+        background-color: white;
+        padding: 20px;
+        border-radius: 5px;
+        left: 50%;
+        width: 70%;
+        max-width: 400px;
+        z-index: 3;
+
+        -webkit-transform: scaleY(-50%, -200%);
+        -ms-transform: translate(-50%, -200%);
+        transform: translate(-50%, -200%);
+
+        -webkit-transition: transform 200ms ease-out;
+        -ms-transition: transform 200ms ease-out;
+        transition: transform 200ms ease-out;
+    }
+    
+    .modal:target:before {
+        display: block;
+       
+    }
+    .modal:before {
+        content: "";
+        display: none;
+        top: 0;
+        left: 0;
+        background-color: rgba(71, 71, 71, 0.534);
+        width: 100%;
+        height: 100%;
+        
+    }
+
+    .modal:target .modal-container {
+        top: 20%;
+        -webkit-transform: translate(-50%, 0);
+        -ms-transform: translate(-50%, 0);
+        transform: translate(-50%, 0);
+    }
+
+    .modal-text {
+        font-size: 20px;
+        text-align: center;
+        letter-spacing: 0.25em;
+        font-weight: 600;
+        color: rgb(26, 107, 26);
+    }
+    .modal-input {
+        text-align: center;
+        background: none;
+        font-size: 30px;
+        
+        margin: 5px 30px 10px 30px;
+        outline: none;
+        border: none;
+        border-bottom: 1px solid rgb(163, 163, 163);
+        
+    }
+    .modal-button {
+        display: flex;
+        justify-content: center;
+    }
+    .modal-submit {
+        font-size: 10px;
+        color: rgba(0, 0, 0, 795);
+        font-weight: 600;
+
+        padding: 10px;
+        background-color: rgb(255, 255, 255);
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+    }
+
+    .modal-submit:hover {
+        color: white;
+        background-color: green;
+    }
+    
+    .modal-close {
+        font-size: 10px;
+        font-weight: 600;
+        text-decoration: none;
+        color: black;
+
+        margin: 5px 15px 5px 15px;
+        padding: 5px 10px 5px 10px;
+        border-radius: 18px;
+    }
+    .modal-close:hover {
+        background-color: rgba(138, 138, 138, 0.185);
+    }
+    a:visited {
+        font-style: normal;
+        color: inherit;
+        text-decoration: none;
+    }
+    
+    /*prj-tests style*/
+    .phy {
+        display: flex;
+        justify-content: flex-start;
+        position: relative;
+    }
+    .phy-result-title {
+        font-size: 30px;
+    }
+    .tests-title {
+        color: rgb(77, 77, 77);
+        text-align: center;
+        font-size: 60px;
+        margin-top: 60px;
+        padding-bottom: 3px;
+    }
+    .bar {
+        height: 5px;
+        width: 40px;
+        border-bottom: 5px solid black;
+        margin-bottom: 10px;
+    }
+    .info {
+        text-align: right;
+        line-break: strict;
+        position: relative;
+        width: 200px;
+        height: auto;
+        float: left;
+        margin: 0px 100px 0px 120px;
+        padding: 0;
+    }
+    .phy-input {
+        text-align: left;
+        background: none;
+        outline: none;
+        border: none;
+        border-bottom: 1px solid rgb(163, 163, 163);
+    }
+    .tests-box {
+        margin-right: 120px;
+    }
+    .labels {
+        text-transform: uppercase;
+        font-size: 13.5px;
+        letter-spacing: 0.3em;
+    }
+    .ra-btn input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+    }
+    .ra-btn {
+        font-family: 'Segoe UI Light', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 20px;
+        display: flex;
+        justify-content: flex-start;
+        margin-right: 20px;
+        cursor: pointer;
+    }
+    .checkmark {
+        position: relative;
+        height: 10px;
+        width: 10px;
+        border-radius: 50%;
+        border: 2.5px solid rgb(137, 161, 137);
+        background-color: transparent;
+        cursor: pointer;
+        margin: 7px 5px 0px 0px;
+    }
+    .ra-btn:hover input ~ .checkmark {
+        background-color: rgb(226, 226, 226);
+    }
+    .ra-btn input:checked ~ .checkmark {
+        background-color: rgb(141, 182, 141);
+    }
+    .checkmark:after {
+        content: "";
+        position: relative;
+        display: none;
+      }
+      
+      /* .container input:checked ~ .checkmark:after {
+        display: block;
+      }
+      
+      .container .checkmark:after {
+        top: 9px;
+        left: 9px;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: white;
+      } */
+
+      .buttonSubmit {
+        cursor: pointer;
+        background-color: transparent;
+        border: 2px solid rgba(72, 145, 111, 0.644);
+        border-radius: 30px;
+        padding: 10px 24px 10px 24px;
+        margin-top: 30px;
+
+        font-size: 12px;
+        letter-spacing: 0.07em;
+        color: rgb(48, 128, 61);
+    }
+    .buttonSubmit:hover {
+        background-color: rgba(241, 241, 241, 0.397);
+    }
+    .buttonSubmit:active {
+        background-color: rgba(255, 255, 255, 0.555);
+    }
+    .buttonSubmit:focus {
+        outline: none;
+    }
+
+    /*grid-tests*/
+    .grid-con-1 {
+        display: grid;
+        grid-template-columns: 25% 53% 22%;
+        grid-template-rows: 60px 60px 60px;
+    }
+    
+    .item1, .item3, .item5 {
+        align-self: center;
+        justify-self: end;
+    }
+        
+    .item2, .item4, .item6 {
+        align-self: center;
+        justify-self: start;
+    }
+    
+    .scale-num {
+        font-size: 12px;
+        font-weight: 300;
+        position: relative;
+        z-index: 1;
+        float: right;
+    }
+    
+    .grid-con-2 {
+        display: grid;
+        grid-template-columns: 50% 10% 10% 10% 10% 10%;
+        grid-template-rows: 25px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px;
+    }
+    
+    .mid {
+        align-self: center;
+        justify-self: center;
+        text-align: center;
+        margin: 0 auto;
+    }
+    .grid-text {
+        font-family: Montserrat, sans-serif;
+        font-size: 15px;
+        align-self: center;
+        justify-self: start;
+        padding-left: 100px;
+    }
+    .advice-phy {
+        display: grid;
+        grid-template-columns: 5% 30% 30% 30% 5%;
+        grid-template-rows: 35px 150px;
+        margin-top: 30px;
+    }
+    .advice-phy a {
+        color: green;
+    }
+    .advice-phy a:visited {
+        color: green;
+    }
+    .tips-nav {
+        font-size: 16px;
+        text-transform: lowercase;
+        text-align: center;
+        color: inherit;
+
+        display: grid;
+        grid-template-columns: 10% 16% 16% 16% 16% 16% 10%;
+    }
+    .nav-e a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    /* Diets */
+    .diets-intro {
+        font-style: italic;
+        padding-left: 250px;
+        padding-right: 250px;
+        margin-top: 30px;
+    }
+    .diets-title {
+        color: rgb(63, 63, 63);
+        font-weight: 600;
+        font-size: 40px;
+        margin-top: 70px;
+        padding-left: 250px;
+    }
+    .diets-con {
+        padding-left: 250px;
+        padding-right: 250px;
+        margin-bottom: 10px;
+    }
+    .diets-con img {
+        margin-bottom: 15px;
+    }
+    .diets-heading {
+        font-weight: 600;
+        font-size: 30px;
+        text-align: center;
+        margin-top: 70px;
+    }
+    .diets-liner {
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        font-weight: 600;
+    }
+
+    .error-message {
+        color: rgb(182, 88, 88);
+        font-family: 'Poppins', sans-serif;
+        font-size: 12px;
+    }
+
+@media only screen and (max-width: 450px) {
+    #navbar {
+        width: 100vw;
+        height: 40px;
+    }
+    .title-box {
+        width: 100vw;
+    }
+    #navbar a {
+        font-size: 8px;
+        padding: 16px 8px;
+    }
+    #navbar a:first-child {
+        padding-left: 16px;
+    }
+    #logo {
+        font-size: 14px;
+    }
+    .title-text {
+        font-size: 40px;
+    }
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    /* Footer Responsive */
+}
